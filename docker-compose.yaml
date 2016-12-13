@@ -9,6 +9,8 @@ services:
     - ner-ms-uk
     - ner-ms-en
     - tokenize-ms
+    - wiki-lang-detect
+    - api_nlp_uk
   ner-ms-uk:
     image: chaliy/ner-ms:uk
     ports:
@@ -19,5 +21,13 @@ services:
       - '8080'
   tokenize-ms:
     image: chaliy/tokenize-ms
+    ports:
+      - '8080'
+  wiki-lang-detect:
+    image: chaliy/wiki-lang-detect
+    ports:
+      - '5000'
+  api_nlp_uk:
+    image: chaliy/api_nlp_uk
     ports:
       - '8080'
